@@ -1,0 +1,30 @@
+{
+  "mondodbApp": {
+    "socialCharges": {
+      "home": {
+        "title": "Social Charges",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Social Charges",
+        "createOrEditLabel": "Create or edit a Social Charges",
+        "notFound": "No Social Charges found"
+      },
+      "created": "A new Social Charges is created with identifier {{ param }}",
+      "updated": "A Social Charges is updated with identifier {{ param }}",
+      "deleted": "A Social Charges is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Social Charges {{ id }}?"
+      },
+      "detail": {
+        "title": "Social Charges"
+      },
+      "id": "ID",
+      "spentDate": "Spent Date",
+      "spentType": "Spent Type",
+      "statusCharges": "Status Charges",
+      "amount": "Amount",
+      "commentText": "Comment Text",
+      "responsableDepense": "Responsable Depense",
+      "enterprise": "Enterprise"
+    }
+  }
+}

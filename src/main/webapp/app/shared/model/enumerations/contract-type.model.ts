@@ -1,0 +1,13 @@
+export enum ContractType {
+  CDD = 'CDD',
+
+  CDI = 'CDI',
+
+  INTERN = 'INTERN',
+
+  APPRENTICE = 'APPRENTICE',
+
+  COMMERCIAL_AGENT = 'COMMERCIAL_AGENT',
+
+  EXTERNAL = 'EXTERNAL',
+}

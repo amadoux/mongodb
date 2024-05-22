@@ -1,0 +1,10 @@
+{
+  "mondodbApp": {
+    "TypeEmployed": {
+      "null": "",
+      "MARKETER": "MARKETER",
+      "SALARY": "SALARY",
+      "CONSULTANT": "CONSULTANT"
+    }
+  }
+}

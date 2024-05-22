@@ -1,0 +1,49 @@
+{
+  "annotations": {
+    "changelogDate": "20240522171421"
+  },
+  "applications": "*",
+  "documentation": "ajouter une absence",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "numberDayAbsence",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "typeAbsence",
+      "fieldType": "TypeAbsence",
+      "fieldValues": "RTT,CONGES_PAYES,CONGES_SANS_SOLDE,CONGE_MATERNITE,ABSENCE_INJUSTIFIE,FORMATION,ACCIDENT_TRAVAIL,ABSENCE_EXCEPTIONNELLE,CONGES_PARTENITE,CHOMAGE_PARTIEL,RECUPERATION,ARRET_MALADIE,ABSENCE_JUSTIFIE"
+    },
+    {
+      "fieldName": "confirmationAbsence",
+      "fieldType": "ConfirmationAbsence",
+      "fieldValues": "ENCOURS,REJETE,ACCEPTE"
+    },
+    {
+      "fieldName": "congeRestant",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Absence",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

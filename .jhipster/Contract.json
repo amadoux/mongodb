@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20240522171419"
+  },
+  "applications": "*",
+  "documentation": "The Contrat.\\nAjouter un contrat",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "documentation": "fieldName",
+      "fieldName": "contractType",
+      "fieldType": "ContractType",
+      "fieldValues": "CDD,CDI,INTERN,APPRENTICE,COMMERCIAL_AGENT,EXTERNAL"
+    },
+    {
+      "fieldName": "entryDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "releaseDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "statusContract",
+      "fieldType": "StatusContract",
+      "fieldTypeDocumentation": "Ajouter un contrat",
+      "fieldValues": "ENCOURS,RUPTURE_CONVENTIONNELLE,LICENCIEMENT_ABUSIVE,LICENCIEMENT_ECONOMIQUE,FIN_CONTRAT"
+    },
+    {
+      "fieldName": "uploadContract",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["minbytes", "maxbytes", "required"],
+      "fieldValidateRulesMaxbytes": "1000",
+      "fieldValidateRulesMinbytes": "3"
+    }
+  ],
+  "name": "Contract",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

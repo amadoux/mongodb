@@ -1,0 +1,55 @@
+{
+  "mondodbApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Employee",
+        "createOrEditLabel": "Créer ou éditer un Employee",
+        "notFound": "Aucun Employee trouvé"
+      },
+      "created": "Un nouveau Employee a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Employee avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Employee avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Employee {{ id }} ?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "identityCard": "Identity Card",
+      "dateInspiration": "Date Inspiration",
+      "nationality": "Nationality",
+      "uploadIdentityCard": "Upload Identity Card",
+      "typeEmployed": "Type Employed",
+      "cityAgency": "City Agency",
+      "residenceCity": "Residence City",
+      "address": "Address",
+      "socialSecurityNumber": "Social Security Number",
+      "birthDate": "Birth Date",
+      "birthPlace": "Birth Place",
+      "entryDate": "Entry Date",
+      "releaseDate": "Release Date",
+      "workstation": "Workstation",
+      "descriptionWorkstation": "Description Workstation",
+      "department": "Department",
+      "level": "Level",
+      "coefficient": "Coefficient",
+      "numberHours": "Number Hours",
+      "averageHourlyCost": "Average Hourly Cost",
+      "monthlyGrossAmount": "Monthly Gross Amount",
+      "commissionAmount": "Commission Amount",
+      "contractType": "Contract Type",
+      "salaryType": "Salary Type",
+      "hireDate": "Hire Date",
+      "enterprise": "Enterprise",
+      "managerEmployee": "Manager Employee",
+      "manager": "Manager"
+    }
+  }
+}
