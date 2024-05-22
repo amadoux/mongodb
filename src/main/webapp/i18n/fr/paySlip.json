@@ -1,0 +1,30 @@
+{
+  "mondodbApp": {
+    "paySlip": {
+      "home": {
+        "title": "PaySlips",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Pay Slip",
+        "createOrEditLabel": "Créer ou éditer un Pay Slip",
+        "notFound": "Aucun Pay Slip trouvé"
+      },
+      "created": "Un nouveau Pay Slip a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pay Slip avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pay Slip avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Pay Slip {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pay Slip"
+      },
+      "id": "ID",
+      "netSalaryPay": "Net Salary Pay",
+      "paySlipDate": "Pay Slip Date",
+      "uploadPaySlip": "Upload Pay Slip",
+      "employee": "Employee",
+      "help": {
+        "netSalaryPay": "fieldName"
+      }
+    }
+  }
+}

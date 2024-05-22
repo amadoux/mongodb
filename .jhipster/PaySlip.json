@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240522171420"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "documentation": "fieldName",
+      "fieldName": "netSalaryPay",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "paySlipDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "uploadPaySlip",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["minbytes", "maxbytes"],
+      "fieldValidateRulesMaxbytes": "1000",
+      "fieldValidateRulesMinbytes": "3"
+    }
+  ],
+  "name": "PaySlip",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

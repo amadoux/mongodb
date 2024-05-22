@@ -1,0 +1,30 @@
+{
+  "mondodbApp": {
+    "paySlip": {
+      "home": {
+        "title": "Pay Slips",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pay Slip",
+        "createOrEditLabel": "Create or edit a Pay Slip",
+        "notFound": "No Pay Slips found"
+      },
+      "created": "A new Pay Slip is created with identifier {{ param }}",
+      "updated": "A Pay Slip is updated with identifier {{ param }}",
+      "deleted": "A Pay Slip is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pay Slip {{ id }}?"
+      },
+      "detail": {
+        "title": "Pay Slip"
+      },
+      "id": "ID",
+      "netSalaryPay": "Net Salary Pay",
+      "paySlipDate": "Pay Slip Date",
+      "uploadPaySlip": "Upload Pay Slip",
+      "employee": "Employee",
+      "help": {
+        "netSalaryPay": "fieldName"
+      }
+    }
+  }
+}
