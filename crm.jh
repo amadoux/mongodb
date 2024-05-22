@@ -1,0 +1,176 @@
+
+
+/** Entreprise */
+
+entity Enterprise {
+    /** fieldName */
+
+    companyName String required
+    businessRegisterNumber String required
+    uniqueIdentificationNumber String required
+    businessDomicile String
+    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    businessPhone String required
+    country Pays
+    city String
+    businessLogo ImageBlob minbytes(3) maxbytes(1000)
+    mapLocator ImageBlob minbytes(3) maxbytes(1000)
+}
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String
+	lastName String
+	email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+	phoneNumber String
+    identityCard String required
+    dateInspiration Instant
+    nationality Pays
+    uploadIdentityCard Blob minbytes(3) maxbytes(1000)
+    typeEmployed TypeEmployed
+     cityAgency String
+     firstName String
+     lastName String
+     residenceCity String
+     email String required
+     phoneNumber String required
+     address String
+     socialSecurityNumber String
+     birthDate Instant
+     birthPlace String
+     entryDate Instant
+     releaseDate Instant
+     workstation String
+     descriptionWorkstation String
+     department Department     
+     level Level
+     coefficient Long
+     numberHours String
+     averageHourlyCost String
+     monthlyGrossAmount Long
+     commissionAmount Long
+     contractType ContractType
+     salaryType SalaryType
+     hireDate Instant
+	
+    
+	
+    
+}
+/*****Ajouter un contrat *******/
+enum StatusContract {
+    ENCOURS, RUPTURE_CONVENTIONNELLE, LICENCIEMENT_ABUSIVE, LICENCIEMENT_ECONOMIQUE, FIN_CONTRAT
+}
+
+/**
+ * The Contrat.
+ * Ajouter un contrat
+ */
+entity Contract {
+    /** fieldName */
+   
+    contractType ContractType
+    entryDate Instant
+    releaseDate Instant
+    statusContract StatusContract
+    uploadContract ImageBlob minbytes(3) maxbytes(1000) required
+}
+entity PaySlip {
+    /** fieldName */
+
+    
+    netSalaryPay Long
+    paySlipDate Instant
+    uploadPaySlip ImageBlob minbytes(3) maxbytes(1000)
+
+}
+/*** ajouter une absence ****/
+entity Absence {
+
+    
+    startDate Instant
+    endDate Instant
+    numberDayAbsence Long
+    typeAbsence TypeAbsence
+    confirmationAbsence ConfirmationAbsence
+    congeRestant Long
+
+}
+/** Ajouter les charges sociales **/
+
+entity SocialCharges {
+   
+    spentDate Instant
+    spentType SPentType
+    statusCharges StatusCharges
+    amount Long required
+    commentText TextBlob required
+
+}
+enum SPentType {
+    MATERIAL, ADMINISTRATIVE, RENT, TELECOMMUNICATIONS_FEES, SERVICES, SHIFT, COMMUNICATION, MARKETING, OTHERS
+}
+enum StatusCharges {
+    IN_PROGRESS, ACCEPTED, REJECTED
+}
+enum TypeAbsence {
+    RTT, CONGES_PAYES, CONGES_SANS_SOLDE, CONGE_MATERNITE, ABSENCE_INJUSTIFIE, FORMATION, ACCIDENT_TRAVAIL, ABSENCE_EXCEPTIONNELLE,CONGES_PARTENITE,CHOMAGE_PARTIEL,RECUPERATION,ARRET_MALADIE,ABSENCE_JUSTIFIE
+}
+enum ConfirmationAbsence {
+    ENCOURS, REJETE, ACCEPTE
+}
+enum Pays {
+    CAMEROON , SENEGAL, COTE_IVOIRE, MALI
+}
+enum TypeEmployed {
+    MARKETER, SALARY, CONSULTANT
+}
+enum Level {
+    A, B, C, D, E
+}
+enum ContractType {
+    CDD, CDI, INTERN, APPRENTICE, COMMERCIAL_AGENT, EXTERNAL
+}
+enum Department {
+Production, Ventes, Marketing, Recherche_Developpement, Comptabilite_Finance, Ressources_Humaines, Service_Client, IT
+}
+enum SalaryType {
+    EXECUTIVE_SALARIED, ASSOCIATE, NON_EXECUTIVE_SALARIED
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship ManyToOne {
+ SocialCharges {ResponsableDepense(email)} to Employee
+SocialCharges {enterprise(companyName)} to Enterprise
+Absence {employee(email)} to Employee
+PaySlip {employee(email)} to Employee
+Contract {employee(email)} to Employee   
+Employee{enterprise(companyName)} to Enterprise
+}
+relationship ManyToOne {
+ Employee{ManagerEmployee(email)} to Employee {manager}
+ 
+}
+
+
+
+
+
+
+// Set pagination options
+paginate Employee with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfer Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
